@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_mesas"
+        android:title="Mesas"
+        android:icon="@drawable/ic_mesas" />
+
+    <item
+        android:id="@+id/menu_platos"
+        android:title="Platos"
+        android:icon="@drawable/ic_platos" />
+
+
+
+</menu>
