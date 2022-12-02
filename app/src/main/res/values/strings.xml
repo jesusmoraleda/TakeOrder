@@ -4,4 +4,6 @@
     <string name="boton_fav">Favoritos</string>
     <string name="addMesa">Introduce el nombre de la mesa</string>
     <string name="add">Añadir</string>
+    <string name="addComensales">Introduce el numero de comensales</string>
+    <string name="nombreComedor">Introduce el nombre del comedor</string>
 </resources>

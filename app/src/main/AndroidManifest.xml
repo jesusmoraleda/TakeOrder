@@ -13,6 +13,9 @@ package="es.ucm.fdi.takeorder">
         android:name=".Platos"
         android:exported="false" />
     <activity
+        android:name=".AddMesas"
+        android:exported="false" />
+    <activity
         android:name=".Mesas"
         android:exported="true">
         <intent-filter>

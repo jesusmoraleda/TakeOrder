@@ -18,6 +18,22 @@
         android:hint="@string/addMesa"
         android:ems="10"
         android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/numeroComensales"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/addComensales"
+        android:ems="10"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/nombreComedor"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombreComedor"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/AñadirMesa"
