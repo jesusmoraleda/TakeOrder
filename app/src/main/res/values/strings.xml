@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TakeOrder</string>
+    <string name="boton_eliminar">Eliminar</string>
+    <string name="boton_fav">Favoritos</string>
+    <string name="addMesa">Introduce el nombre de la mesa</string>
+    <string name="add">Añadir</string>
 </resources>
