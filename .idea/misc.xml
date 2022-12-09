@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.161" />
+        <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/drawable-v24/table_restaurant-48px.xml" value="0.1" />
         <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/drawable/ic_listas.xml" value="0.161" />
+        <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/drawable/ic_platos.xml" value="0.2455" />
         <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/layout/activity_add_mesas.xml" value="0.36666666666666664" />
         <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/layout/activity_mesas.xml" value="0.22" />
+        <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/layout/activity_mesas.xml" value="0.5" />
         <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/layout/activity_platos.xml" value="0.33" />
-        <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/layout/item_adapter_mesas.xml" value="0.36666666666666664" />
+        <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/layout/item_adapter_mesas.xml" value="0.22393822393822393" />
         <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/layout/item_adapter_platos.xml" value="0.25" />
         <entry key="..\:/Jesus/Source/TakeOrder/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.36666666666666664" />
       </map>
