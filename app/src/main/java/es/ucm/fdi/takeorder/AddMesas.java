@@ -46,15 +46,6 @@ public class AddMesas extends AppCompatActivity {
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MesaElement newMesa = new MesaElement(nombreMesa.getText().toString());
-                elements.add((newMesa));
-                MesaAdapter mesaAdapter = new MesaAdapter(elements, context);
-                //TODO: mostrar las mesas en la pestaña Mesas
-                //falla aqui, recyclerview null
-                RecyclerView recyclerView = findViewById(R.id.mesasRecyclerview);
-                recyclerView.setHasFixedSize(true);
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                recyclerView.setAdapter(mesaAdapter);
                 //codigo para añadir a la base de datos
                 /*hp.put("comensales", Integer.parseInt(numeroComensales.getText().toString()));
                 hp.put("test", 1234);

@@ -6,8 +6,12 @@ public class MesaElement {
     public String status;
 
     public MesaElement(String name) {
-        this.color = "775447";
+        this.color = "#FF000000";
         this.name = name;
+        this.status = "Activo";
+    }
+    public MesaElement(){
+        this.color = "#FF000000";
         this.status = "Activo";
     }
 
