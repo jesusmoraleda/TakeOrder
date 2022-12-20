@@ -2,8 +2,6 @@ package es.ucm.fdi.takeorder;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +20,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import es.ucm.fdi.takeorder.model.MesaElement;
 
 public class AddMesas extends AppCompatActivity {
     private FirebaseFirestore db;
@@ -58,13 +57,6 @@ public class AddMesas extends AppCompatActivity {
         anadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //codigo para añadir a la base de datos
-                /*hp.put("comensales", Integer.parseInt(numeroComensales.getText().toString()));
-                hp.put("test", 1234);
-                db.collection("mesas").document(nombreMesa.getText().toString()).set(
-                        hp
-                );*/
 
                 //tenemos que obtener la informacion que ha introducido el usuario
                 String nombre = nombreMesa.getText().toString().trim();

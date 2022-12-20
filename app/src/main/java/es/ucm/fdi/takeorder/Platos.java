@@ -22,7 +22,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-import kotlin.collections.ArrayDeque;
 
 public class Platos extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();

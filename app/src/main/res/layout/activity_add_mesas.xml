@@ -8,24 +8,24 @@
     tools:context=".AddMesas">
 
 
-
-
     <EditText
         android:id="@+id/nombreMesaNueva"
         android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
-        android:hint="@string/addMesa"
+        android:layout_marginTop="15dp"
         android:ems="10"
+        android:hint="@string/addMesa"
         android:inputType="textPersonName" />
+
     <EditText
         android:id="@+id/numeroComensales"
         android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
-        android:hint="@string/addComensales"
+        android:layout_marginTop="15dp"
         android:ems="10"
+        android:hint="@string/addComensales"
         android:inputType="textPersonName" />
+
     <Button
         android:id="@+id/AñadirMesa"
         android:layout_width="match_parent"

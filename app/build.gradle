@@ -1,9 +1,10 @@
 plugins {
     id 'com.android.application'
     // Add the Google services Gradle plugin
-    id 'com.google.gms.google-services'
-
+    //id 'com.google.gms.google-services'
 }
+
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 32
@@ -31,13 +32,34 @@ android {
 }
 
 dependencies {
+
     // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
 
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-firestore'
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+
+    // FirebaseUI for Firebase Realtime Database
+    implementation 'com.firebaseui:firebase-ui-database:8.0.2'
+
+    // FirebaseUI for Cloud Firestore
+    implementation 'com.firebaseui:firebase-ui-firestore:8.0.2'
+
+    // FirebaseUI for Firebase Auth
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
+
+    // FirebaseUI for Cloud Storage
+    implementation 'com.firebaseui:firebase-ui-storage:8.0.2'
+
+    //implementation 'com.google.firebase:firebase-firestore'
+
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+    //implementation 'com.google.firebase:firebase-core:21.1.1'
+
 
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
