@@ -2,6 +2,7 @@ package es.ucm.fdi.takeorder.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
@@ -25,6 +26,8 @@ import com.google.firebase.firestore.FirestoreRegistrar;
 
 import java.util.List;
 
+import es.ucm.fdi.takeorder.AddMesas;
+import es.ucm.fdi.takeorder.Mesas;
 import es.ucm.fdi.takeorder.R;
 import es.ucm.fdi.takeorder.model.MesaElement;
 
@@ -53,6 +56,16 @@ public class MesaAdapter extends FirestoreRecyclerAdapter<MesaElement,MesaAdapte
 
         viewHolder.nombre.setText(model.getNombre());
         viewHolder.numero.setText(model.getNumero());
+
+        viewHolder.btn_editar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //para poder enviar datos o parametros a traves de activity
+                Intent i = new Intent(activity, AddMesas.class);
+                i.putExtra("id_mesa",id);
+                activity.startActivity(i);
+            }
+        });
 
         viewHolder.btn_eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +101,7 @@ public class MesaAdapter extends FirestoreRecyclerAdapter<MesaElement,MesaAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         //pasa los datos atraves de esta instancia
         TextView nombre, numero;
-        Button btn_eliminar;
+        Button btn_eliminar, btn_editar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -97,65 +110,9 @@ public class MesaAdapter extends FirestoreRecyclerAdapter<MesaElement,MesaAdapte
             numero = itemView.findViewById(R.id.numeroComensales);
             //y lo mismo con los botones
            btn_eliminar = itemView.findViewById(R.id.btnMesaEliminar);
+           btn_editar = itemView.findViewById(R.id.btnMesaEditar);
 
         }
     }
 
-    /*
-    private List<MesaElement> mData;
-    private LayoutInflater mInflater;
-    private Context context;
-
-    public MesaAdapter(List<MesaElement> itemList, Context context){
-        this.mInflater = LayoutInflater.from(context);
-        this.context = context;
-        this.mData = itemList;
-    }
-
-
-    //region Public methods
-    @Override
-    public int getItemCount(){return mData.size();}
-
-    @Override
-    protected void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, @NonNull Object model) {
-
-    }
-
-    @Override
-    public MesaAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = mInflater.inflate(R.layout.item_adapter_mesas, null);
-        return new MesaAdapter.ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(final MesaAdapter.ViewHolder holder, int position){
-        holder.bindData(mData.get(position));
-    }
-
-    public void setItemList(List<MesaElement> items) {mData = items;}
-
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView iconImage;
-        TextView name, status;
-        Button delete, favoritos;
-
-        ViewHolder(View itemView){
-            super(itemView);
-            iconImage = itemView.findViewById(R.id.iconImageView);
-            name = itemView.findViewById(R.id.nombreMesa);
-            status = itemView.findViewById(R.id.statusTextView);
-            delete = itemView.findViewById(R.id.MesaEliminar);
-            favoritos = itemView.findViewById(R.id.MesaFavorito);
-        }
-
-        void bindData(final MesaElement item){
-            //iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
-            name.setText(item.getName());
-            //status.setText(item.getStatus());
-        }
-
-    }
-    */
-    //endregion
 }

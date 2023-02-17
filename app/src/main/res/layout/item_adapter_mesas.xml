@@ -118,12 +118,12 @@
                         android:text="@string/boton_eliminar" />
 
                     <Button
-                        android:id="@+id/MesaFavorito"
+                        android:id="@+id/btnMesaEditar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
-                        android:layout_marginLeft="10dp"
-                        android:text="favoritos" />
+                        android:layout_marginLeft="30dp"
+                        android:text="editar" />
 
                 </LinearLayout>
 
