@@ -91,18 +91,8 @@ public class Platos extends AppCompatActivity {
         setContentView(R.layout.activity_platos);
         listPer = findViewById(R.id.lv_datosPlatos);
 
-        init();
+
         cargarPlatos();
-    }
-
-    @Override
-    public String toString() { return nombre; }
-    //endregion
-
-
-
-    //region Private methods
-    private void init(){
 
         navigation = findViewById(R.id.menu_bottom_navigation);
         navigation.setSelectedItemId(R.id.menu_platos);
@@ -115,6 +105,7 @@ public class Platos extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), Mesas.class));
                         overridePendingTransition(0, 0);
                         return true;
+
                     case R.id.menu_platos:
                         return true;
 
@@ -122,7 +113,13 @@ public class Platos extends AppCompatActivity {
                 return false;
             }
         });
+
     }
+
+    @Override
+    public String toString() { return nombre; }
+    //endregion
+
 
     private void cargarPlatos(){
         //seleccionamos la coleccion platos y obtenemos sus documentos

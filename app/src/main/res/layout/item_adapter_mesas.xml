@@ -30,8 +30,10 @@
                 android:layout_height="70dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
                 android:layout_gravity="center"
+                android:layout_marginStart="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
                 app:srcCompat="@drawable/ic_table_restaurant" />
@@ -104,44 +106,40 @@
                     android:visibility="invisible"
                     tools:visibility="invisible" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btnMesaEliminar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start"
-                        android:layout_marginLeft="10dp"
-                        android:text="@string/boton_eliminar" />
-
-                    <Button
-                        android:id="@+id/btnMesaEditar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginLeft="30dp"
-                        android:text="editar" />
-
-                </LinearLayout>
-
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/statusTextView"
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnMesaEliminar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="6dp"
-                android:layout_marginRight="6dp"
-                android:text="Activo"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
+                android:layout_gravity="start"
+                android:layout_marginLeft="15dp"
+                android:text="@string/boton_eliminar" />
+
+            <Button
+                android:id="@+id/btnMesaEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="30dp"
+                android:text="editar" />
+
+            <Button
+                android:id="@+id/btnMesaComanda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="30dp"
+                android:text="comanda" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

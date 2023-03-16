@@ -71,7 +71,6 @@ public class Mesas extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), Platos.class));
                         overridePendingTransition(0, 0);
                         return true;
-
                 }
                 return false;
             }

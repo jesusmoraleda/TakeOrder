@@ -26,8 +26,10 @@ import com.google.firebase.firestore.FirestoreRegistrar;
 
 import java.util.List;
 
+
 import es.ucm.fdi.takeorder.AddMesas;
-import es.ucm.fdi.takeorder.Mesas;
+import es.ucm.fdi.takeorder.AddOrder;
+
 import es.ucm.fdi.takeorder.R;
 import es.ucm.fdi.takeorder.model.MesaElement;
 
@@ -73,6 +75,18 @@ public class MesaAdapter extends FirestoreRecyclerAdapter<MesaElement,MesaAdapte
                 deleteMesa(id);
             }
         });
+
+        viewHolder.btn_comanda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //para poder enviar datos o parametros a traves de activity
+                Intent i = new Intent(activity, AddOrder.class);
+                i.putExtra("id_mesa",id);
+                activity.startActivity(i);
+
+
+            }
+        });
     }
 
     private void deleteMesa(String id) {
@@ -101,7 +115,7 @@ public class MesaAdapter extends FirestoreRecyclerAdapter<MesaElement,MesaAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         //pasa los datos atraves de esta instancia
         TextView nombre, numero;
-        Button btn_eliminar, btn_editar;
+        Button btn_eliminar, btn_editar,btn_comanda;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -111,6 +125,7 @@ public class MesaAdapter extends FirestoreRecyclerAdapter<MesaElement,MesaAdapte
             //y lo mismo con los botones
            btn_eliminar = itemView.findViewById(R.id.btnMesaEliminar);
            btn_editar = itemView.findViewById(R.id.btnMesaEditar);
+           btn_comanda = itemView.findViewById(R.id.btnMesaComanda);
 
         }
     }

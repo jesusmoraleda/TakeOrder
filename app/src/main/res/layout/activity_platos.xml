@@ -9,8 +9,6 @@
     tools:context=".Platos">
 
 
-
-
     <ListView
         android:id="@+id/lv_datosPlatos"
         android:layout_width="match_parent"
@@ -35,3 +33,4 @@
 
 
 </LinearLayout>
+
