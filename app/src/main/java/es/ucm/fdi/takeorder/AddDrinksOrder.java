@@ -38,6 +38,15 @@ public class AddDrinksOrder extends AppCompatActivity {
         recyclerViewAddDrinksOrder.setAdapter(drinksAdapter);
 
 
+        //para poder retroceder haciendo click a atras
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    //para poder hacer la accion de selec click y retoceder
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return false;
     }
 
     @Override

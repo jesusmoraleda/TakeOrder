@@ -4,6 +4,7 @@ public class DrinksOrderElement {
 
     //segun se representen los campos en la base de datos, asi deben ir en el modelo
     String name;
+    String amount;
 
     public DrinksOrderElement(){}
 
@@ -18,4 +19,14 @@ public class DrinksOrderElement {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+
 }
