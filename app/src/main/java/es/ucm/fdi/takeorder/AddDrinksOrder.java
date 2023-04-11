@@ -28,10 +28,11 @@ public class AddDrinksOrder extends AppCompatActivity {
         dbFirestore = FirebaseFirestore.getInstance();
         recyclerViewAddDrinksOrder = findViewById(R.id.drinksRecyclerView);
         recyclerViewAddDrinksOrder.setLayoutManager(new LinearLayoutManager(this));
-        Query query = dbFirestore.collection("all_drinks");
+        Query query = dbFirestore.collection("all_drinks").whereGreaterThan("amount","0");
 
         FirestoreRecyclerOptions<DrinksOrderElement> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<DrinksOrderElement>().setQuery(query, DrinksOrderElement.class).build();
+
 
         drinksAdapter = new DrinksOrderAdapter(firestoreRecyclerOptions, this);
         drinksAdapter.notifyDataSetChanged();

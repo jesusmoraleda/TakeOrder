@@ -58,11 +58,12 @@ public class DrinksOrderAdapter extends FirestoreRecyclerAdapter<DrinksOrderElem
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder viewHolder, int position, @NonNull DrinksOrderElement model) {
-        //referenciamos el id del elemento
+        //referenciamos el id del elemento , Obtén el documento actual del snapshot
         DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(viewHolder.getAdapterPosition());
-        final String id = documentSnapshot.getId();
+        final String id_drink = documentSnapshot.getId();
 
         String id_mesa = activity.getIntent().getStringExtra("id_mesa");
+
 
 
 
@@ -76,6 +77,7 @@ public class DrinksOrderAdapter extends FirestoreRecyclerAdapter<DrinksOrderElem
                 //para poder enviar datos o parametros a traves de activity
                 String amount = viewHolder.amount_drink.getText().toString().trim();
                 String name = viewHolder.name_drink.getText().toString().trim();
+                String amountTotal = viewHolder.num_total_drinks.getText().toString().trim();
 
 
                 // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
@@ -95,15 +97,19 @@ public class DrinksOrderAdapter extends FirestoreRecyclerAdapter<DrinksOrderElem
                         } else if (!esNumero(amount)) {
                             Toast.makeText(activity, "Error en la cantidad, introducir un numero", Toast.LENGTH_SHORT).show();
 
+                        } else if (Integer.parseInt(amount) > Integer.parseInt(amountTotal)) {
+                            Toast.makeText(activity, "Error, a superado la cantidad total disponible", Toast.LENGTH_SHORT).show();
+
                         } else {
                             //guardaremos la mesa con sus respectivos campos
 
                             Map<String, Object> map = new HashMap<>();
                             map.put("name", name);
-                            map.put("amount",amount);
+                            map.put("amount", amount);
+
 
                             Task<DocumentSnapshot> task;
-                            task =  dbFirestore.collection("mesas").document(id_mesa).collection("drinks").document(name).get();
+                            task = dbFirestore.collection("mesas").document(id_mesa).collection("drinks").document(name).get();
 
                             task.addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                 @Override
@@ -116,6 +122,7 @@ public class DrinksOrderAdapter extends FirestoreRecyclerAdapter<DrinksOrderElem
                                                     @Override
                                                     public void onSuccess(Void aVoid) {
                                                         Toast.makeText(activity, "Bebidas añadidas correctamente", Toast.LENGTH_SHORT).show();
+
                                                         mDialog.dismiss();
                                                     }
                                                 })
@@ -145,7 +152,28 @@ public class DrinksOrderAdapter extends FirestoreRecyclerAdapter<DrinksOrderElem
                                     }
                                 }
                             });
+
+                            // Actualizar la cantidad en la colección "all_drinks"
+                            DocumentReference allDrinksRef = dbFirestore.collection("all_drinks").document(id_drink);
+                            allDrinksRef.update("amount", String.valueOf(Integer.parseInt(amountTotal) - Integer.parseInt(amount)))
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            // La cantidad se ha actualizado correctamente
+                                            Toast.makeText(activity, "Actulizadas las bebidas totales", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            // Ha ocurrido un error al actualizar la cantidad
+                                            Toast.makeText(activity, "Error al actulizar las bebidas totales", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
                         }
+
+
                     }
                 });
 
