@@ -31,6 +31,7 @@ import es.ucm.fdi.takeorder.AddMesas;
 import es.ucm.fdi.takeorder.AddOrder;
 
 import es.ucm.fdi.takeorder.R;
+import es.ucm.fdi.takeorder.SelectOption;
 import es.ucm.fdi.takeorder.model.MesaElement;
 
 
@@ -80,7 +81,7 @@ public class MesaAdapter extends FirestoreRecyclerAdapter<MesaElement,MesaAdapte
             @Override
             public void onClick(View view) {
                 //para poder enviar datos o parametros a traves de activity
-                Intent i = new Intent(activity, AddOrder.class);
+                Intent i = new Intent(activity, SelectOption.class);
                 i.putExtra("id_mesa",id);
                 activity.startActivity(i);
 

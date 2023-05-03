@@ -20,7 +20,7 @@ public class AddOrder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_order);
-        this.setTitle("Añadir Comanda");
+        this.setTitle("Añadir Carta");
 
         btn_add_drinks = findViewById(R.id.btn_add_Drinks);
         btn_list_drinks = findViewById(R.id.btn_show_Drinks);
