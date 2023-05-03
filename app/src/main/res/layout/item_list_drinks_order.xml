@@ -52,6 +52,12 @@
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/listAmountDrink"
@@ -59,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="15dp"
                         android:paddingBottom="15dp"
-                        android:text="Cantidad :"
+                        android:text="Cantidad total :"
                         android:textColor="@color/black"
                         android:textSize="20dp"
                         android:textStyle="normal" />
@@ -78,6 +84,82 @@
                         android:textColor="@color/black"
                         android:textSize="20dp"
                         android:textStyle="bold" />
+
+
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/listUltAmountDrink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="Cantidad ultima comanda :"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="normal" />
+
+                <TextView
+
+                    android:id="@+id/numUltAmountDrink"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="unidades"
+                    android:enabled="false"
+                    android:paddingLeft="15dp"
+                    android:paddingBottom="0dp"
+                    android:text="Unidades"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxDrinksPendiente"
+                        android:layout_width="154dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:buttonTint="#3F51B5"
+                        android:checked="true"
+                        android:cursorVisible="false"
+                        android:text="Pendiente"
+                        android:textColor="#3F51B5"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxDrinksEntregado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:buttonTint="#19B520"
+                        android:checked="false"
+                        android:cursorVisible="false"
+                        android:duplicateParentState="false"
+                        android:editable="false"
+                        android:text="Entregado"
+                        android:textColor="#4CAF50"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:centerIfNoTextEnabled="false"
+                        app:checkedState="unchecked"
+                        tools:visibility="visible" />
+
 
                 </LinearLayout>
 

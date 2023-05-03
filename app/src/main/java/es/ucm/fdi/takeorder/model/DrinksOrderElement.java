@@ -5,11 +5,17 @@ public class DrinksOrderElement {
     //segun se representen los campos en la base de datos, asi deben ir en el modelo
     String name;
     String amount;
+    String ultAmount;
+    boolean entregado;
 
     public DrinksOrderElement(){}
 
-    public DrinksOrderElement(String name) {
+    public DrinksOrderElement(String name, String amount,String ultAmount, boolean entregado) {
+        
         this.name = name;
+        this.amount = amount;
+        this.ultAmount = ultAmount;
+        this.entregado = entregado;
     }
 
     public String getName() {
@@ -27,6 +33,18 @@ public class DrinksOrderElement {
     public void setAmount(String amount) {
         this.amount = amount;
     }
+
+    public boolean getEntregado() {
+        return entregado;
+    }
+
+    public void setEntregado(boolean entregado) {
+        this.entregado = entregado;
+    }
+
+    public String getUltAmount() {return ultAmount;}
+
+    public void setUltAmount(String ultAmount) {this.ultAmount = ultAmount;}
 
 
 }

@@ -106,6 +106,8 @@ public class DrinksOrderAdapter extends FirestoreRecyclerAdapter<DrinksOrderElem
                             Map<String, Object> map = new HashMap<>();
                             map.put("name", name);
                             map.put("amount", amount);
+                            map.put("ultAmount",amount);
+                            map.put("entregado",false);
 
 
                             Task<DocumentSnapshot> task;
@@ -135,7 +137,7 @@ public class DrinksOrderAdapter extends FirestoreRecyclerAdapter<DrinksOrderElem
                                     } else {
                                         //Si existe, se actualiza la cantidad
                                         DocumentReference documentReference = dbFirestore.collection("mesas").document(id_mesa).collection("drinks").document(name);
-                                        documentReference.update("amount", String.valueOf(Integer.parseInt(task.getResult().getString("amount")) + Integer.parseInt(amount)))
+                                        documentReference.update("amount", String.valueOf(Integer.parseInt(task.getResult().getString("amount")) + Integer.parseInt(amount)),"ultAmount",amount,"entregado",false)
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void aVoid) {
