@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cvListPlates"
+    android:id="@+id/cvListDrinks"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
@@ -42,7 +42,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/listTitlePlates"
+                        android:id="@+id/listTitlePlate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="15dp"
@@ -52,7 +52,6 @@
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -60,21 +59,20 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-
                     <TextView
-                        android:id="@+id/listAmountPlates"
+                        android:id="@+id/listAmountPlate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="15dp"
                         android:paddingBottom="15dp"
-                        android:text="Cantidad :"
+                        android:text="Cantidad total :"
                         android:textColor="@color/black"
                         android:textSize="20dp"
                         android:textStyle="normal" />
 
                     <TextView
 
-                        android:id="@+id/numAmountPlates"
+                        android:id="@+id/numAmountPlate"
                         android:layout_width="110dp"
                         android:layout_height="match_parent"
                         android:contentDescription="unidades"
@@ -86,6 +84,49 @@
                         android:textColor="@color/black"
                         android:textSize="20dp"
                         android:textStyle="bold" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxPlatesPendiente"
+                        android:layout_width="154dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:buttonTint="#3F51B5"
+                        android:checked="true"
+                        android:cursorVisible="false"
+                        android:text="Pendiente"
+                        android:textColor="#3F51B5"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxPlatesEntregado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:buttonTint="#19B520"
+                        android:checked="false"
+                        android:cursorVisible="false"
+                        android:duplicateParentState="false"
+                        android:editable="false"
+                        android:text="Entregado"
+                        android:textColor="#4CAF50"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:centerIfNoTextEnabled="false"
+                        app:checkedState="unchecked"
+                        tools:visibility="visible" />
+
 
                 </LinearLayout>
 

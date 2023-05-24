@@ -29,7 +29,7 @@ public class AddPlatesOrder extends AppCompatActivity {
         dbFirestore = FirebaseFirestore.getInstance();
         recyclerViewAddPlatesOrder = findViewById(R.id.platesRecyclerView);
         recyclerViewAddPlatesOrder.setLayoutManager(new LinearLayoutManager(this));
-        Query query = dbFirestore.collection("plates").whereGreaterThan("amount","0");
+        Query query = dbFirestore.collection("plates");//whereGreaterThan("amount","0");
 
         FirestoreRecyclerOptions<PlatesOrderElement> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<PlatesOrderElement>().setQuery(query, PlatesOrderElement.class).build();

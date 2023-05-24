@@ -18,20 +18,23 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_show_Primeros"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_show_Primeros"
         android:layout_width="300dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="#4CAF50"
-        android:text="primeros pedidos"
 
+        android:text="primeros pedidos"
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_Segundos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="145dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_add_Segundos"
@@ -50,20 +53,21 @@
         android:id="@+id/btn_show_Segundos"
         android:layout_width="300dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#FF9800"
-        android:text="segundos pedidos"
 
+        android:text="segundos pedidos"
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_Postre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="360dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_add_Postre"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#E91E63"
         android:text="añadir postre"
         android:textSize="20dp"
@@ -76,14 +80,15 @@
         android:id="@+id/btn_show_Postre"
         android:layout_width="300dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="#E91E63"
-        android:text="postres pedidos"
 
+        android:text="postres pedidos"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="569dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

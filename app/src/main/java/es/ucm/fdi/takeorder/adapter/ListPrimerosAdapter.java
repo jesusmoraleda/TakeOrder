@@ -23,9 +23,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import es.ucm.fdi.takeorder.R;
-import es.ucm.fdi.takeorder.model.DrinksOrderElement;
+import es.ucm.fdi.takeorder.model.MenuElement;
 
-public class ListDrinksAdapter extends FirestoreRecyclerAdapter<DrinksOrderElement,ListDrinksAdapter.ViewHolder> {
+public class ListPrimerosAdapter extends FirestoreRecyclerAdapter<MenuElement,ListPrimerosAdapter.ViewHolder> {
 
     private FirebaseFirestore dbFirestore = FirebaseFirestore.getInstance();
     Activity activity;
@@ -36,26 +36,25 @@ public class ListDrinksAdapter extends FirestoreRecyclerAdapter<DrinksOrderEleme
      *
      * @param options
      */
-    public ListDrinksAdapter(@NonNull FirestoreRecyclerOptions<DrinksOrderElement> options, Activity activity) {
+    public ListPrimerosAdapter(@NonNull FirestoreRecyclerOptions<MenuElement> options, Activity activity) {
         super(options);
         this.activity= activity;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull ViewHolder viewHolder, int position, @NonNull DrinksOrderElement model) {
+    protected void onBindViewHolder(@NonNull ViewHolder viewHolder, int position, @NonNull MenuElement model) {
 
         DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(viewHolder.getAdapterPosition());
         final String id = documentSnapshot.getId();
 
         String id_mesa = activity.getIntent().getStringExtra("id_mesa");
 
-        viewHolder.name_drink.setText(model.getName());
-        viewHolder.amount_drink.setText(String.valueOf(model.getAmount()));
-        //viewHolder.amount_ult_drink.setText(model.getUltAmount());
+        viewHolder.name_plate.setText(model.getName());
+        viewHolder.quantity_plate.setText(String.valueOf(model.getQuantity()));
 
         // Si el campo "entregado" de la base de datos es true, mostrar el checkbox entregado como marcado,
         // y ocultar el checkbox pendiente
-        boolean entregado = model.getEntregado();
+        boolean entregado = model.isEntregado();
 
         if (entregado) {
             viewHolder.entregadoCheckBox.setChecked(true);
@@ -81,7 +80,7 @@ public class ListDrinksAdapter extends FirestoreRecyclerAdapter<DrinksOrderEleme
                                 public void onClick(DialogInterface dialog, int id0) {
 
                                     dbFirestore.collection("mesas").document(id_mesa)
-                                            .collection("drinks").document(id)
+                                            .collection("menu_primeros").document(id)
                                             .update("entregado", true)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
@@ -117,14 +116,13 @@ public class ListDrinksAdapter extends FirestoreRecyclerAdapter<DrinksOrderEleme
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_drinks_order,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_plates_menu,parent,false);
         return new ViewHolder(view);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name_drink;
-        TextView amount_drink;
-        //TextView amount_ult_drink;
+        TextView name_plate;
+        TextView quantity_plate;
 
         CheckBox entregadoCheckBox;
         CheckBox pendienteCheckBox;
@@ -132,13 +130,12 @@ public class ListDrinksAdapter extends FirestoreRecyclerAdapter<DrinksOrderEleme
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //referenciamos los valores atraves de cada setText de onBindViewHolder
-            name_drink = itemView.findViewById(R.id.listTitleDrink);
-            amount_drink = itemView.findViewById(R.id.numAmountDrink);
-            //amount_ult_drink = itemView.findViewById(R.id.numUltAmountDrink);
+            name_plate = itemView.findViewById(R.id.listTitlePlateMenu);
+            quantity_plate = itemView.findViewById(R.id.numAmountPlateMenu);
 
 
-            entregadoCheckBox = itemView.findViewById(R.id.checkBoxDrinksEntregado);
-            pendienteCheckBox = itemView.findViewById(R.id.checkBoxDrinksPendiente);
+            entregadoCheckBox = itemView.findViewById(R.id.checkBoxPlateMenuEntregado);
+            pendienteCheckBox = itemView.findViewById(R.id.checkBoxPlateMenuPendiente);
         }
 
     }

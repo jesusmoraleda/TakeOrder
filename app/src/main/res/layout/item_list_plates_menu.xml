@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cvListDrinks"
+    android:id="@+id/cvListPlatesMenu"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
@@ -42,12 +42,12 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/listTitleDrink"
-                        android:layout_width="188dp"
+                        android:id="@+id/listTitlePlateMenu"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="15dp"
                         android:paddingBottom="15dp"
-                        android:text="Nombre Bebida"
+                        android:text="Nombre Plato"
                         android:textColor="@color/black"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -60,19 +60,19 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/listAmountDrink"
+                        android:id="@+id/listAmountPlateMenu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="15dp"
                         android:paddingBottom="15dp"
-                        android:text="Cantidad total :"
+                        android:text="Cantidad :"
                         android:textColor="@color/black"
                         android:textSize="20dp"
                         android:textStyle="normal" />
 
                     <TextView
 
-                        android:id="@+id/numAmountDrink"
+                        android:id="@+id/numAmountPlateMenu"
                         android:layout_width="110dp"
                         android:layout_height="match_parent"
                         android:contentDescription="unidades"
@@ -89,15 +89,13 @@
 
                 </LinearLayout>
 
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBoxDrinksPendiente"
+                        android:id="@+id/checkBoxPlateMenuPendiente"
                         android:layout_width="154dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -110,7 +108,7 @@
                         android:textStyle="bold" />
 
                     <CheckBox
-                        android:id="@+id/checkBoxDrinksEntregado"
+                        android:id="@+id/checkBoxPlateMenuEntregado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"

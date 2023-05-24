@@ -3,18 +3,16 @@ package es.ucm.fdi.takeorder.model;
 public class DrinksOrderElement {
 
     //segun se representen los campos en la base de datos, asi deben ir en el modelo
-    String name;
-    String amount;
-    String ultAmount;
-    boolean entregado;
+    private String name;
+    private int amount;
+    private boolean entregado;
 
     public DrinksOrderElement(){}
 
-    public DrinksOrderElement(String name, String amount,String ultAmount, boolean entregado) {
+    public DrinksOrderElement(String name, int amount, boolean entregado) {
         
         this.name = name;
         this.amount = amount;
-        this.ultAmount = ultAmount;
         this.entregado = entregado;
     }
 
@@ -26,11 +24,11 @@ public class DrinksOrderElement {
         this.name = name;
     }
 
-    public String getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
@@ -41,10 +39,5 @@ public class DrinksOrderElement {
     public void setEntregado(boolean entregado) {
         this.entregado = entregado;
     }
-
-    public String getUltAmount() {return ultAmount;}
-
-    public void setUltAmount(String ultAmount) {this.ultAmount = ultAmount;}
-
 
 }

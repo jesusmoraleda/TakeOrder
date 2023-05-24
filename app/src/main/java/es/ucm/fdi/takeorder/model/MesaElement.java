@@ -2,7 +2,7 @@ package es.ucm.fdi.takeorder.model;
 
 public class MesaElement {
     //segun se representen los campos en la base de datos, asi deben ir en el modelo
-     String nombre,numero;
+     private String nombre,numero;
 
      public MesaElement(){}
 

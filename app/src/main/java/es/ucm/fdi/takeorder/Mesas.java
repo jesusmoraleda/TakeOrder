@@ -21,7 +21,7 @@ import es.ucm.fdi.takeorder.adapter.MesaAdapter;
 import es.ucm.fdi.takeorder.model.MesaElement;
 
 public class Mesas extends AppCompatActivity {
-    BottomNavigationView navigation;
+    //BottomNavigationView navigation;
 
     RecyclerView recyclerViewMesas;
     MesaAdapter mesaAdapter;
@@ -33,8 +33,8 @@ public class Mesas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesas);
 
-        navigation = findViewById(R.id.menu_bottom_navigation);
-        navigation.setSelectedItemId(R.id.menu_mesas);
+        //navigation = findViewById(R.id.menu_bottom_navigation);
+        // navigation.setSelectedItemId(R.id.menu_mesas);
 
 
         dbFirestore = FirebaseFirestore.getInstance();
@@ -59,7 +59,7 @@ public class Mesas extends AppCompatActivity {
                 Intent i = new Intent(Mesas.this, AddMesas.class);
                 startActivity(new Intent(Mesas.this, AddMesas.class));
             }
-        });
+        }); /*
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -74,7 +74,7 @@ public class Mesas extends AppCompatActivity {
                 }
                 return false;
             }
-        });
+        });*/
     }
 
     @Override
