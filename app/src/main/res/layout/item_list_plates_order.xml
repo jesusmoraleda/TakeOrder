@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvListDrinks"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cvListDrinks"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
     app:cardElevation="10dp"
-
     app:cardCornerRadius="15dp">
 
     <LinearLayout
@@ -24,11 +22,9 @@
             android:orientation="horizontal"
             android:padding="6dp">
 
-
-
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="382dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="4dp"
@@ -43,8 +39,9 @@
 
                     <TextView
                         android:id="@+id/listTitlePlate"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:paddingLeft="15dp"
                         android:paddingBottom="15dp"
                         android:text="Nombre Plato"
@@ -71,7 +68,6 @@
                         android:textStyle="normal" />
 
                     <TextView
-
                         android:id="@+id/numAmountPlate"
                         android:layout_width="110dp"
                         android:layout_height="match_parent"
@@ -85,8 +81,6 @@
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
-
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -96,8 +90,9 @@
 
                     <CheckBox
                         android:id="@+id/checkBoxPlatesPendiente"
-                        android:layout_width="154dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:buttonTint="#3F51B5"
                         android:checked="true"
@@ -109,10 +104,10 @@
 
                     <CheckBox
                         android:id="@+id/checkBoxPlatesEntregado"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
                         android:layout_weight="1"
+                        android:layout_marginStart="20dp"
                         android:buttonTint="#19B520"
                         android:checked="false"
                         android:cursorVisible="false"
@@ -126,7 +121,6 @@
                         app:centerIfNoTextEnabled="false"
                         app:checkedState="unchecked"
                         tools:visibility="visible" />
-
 
                 </LinearLayout>
 

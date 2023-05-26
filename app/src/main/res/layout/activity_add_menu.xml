@@ -6,89 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".AddOrder">
 
-
     <Button
         android:id="@+id/btn_add_Primeros"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#4CAF50"
         android:text="añadir primeros"
-        android:textSize="20dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_show_Primeros"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_show_Primeros"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#4CAF50"
-
         android:text="primeros pedidos"
-        android:textSize="20dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_add_Segundos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_Primeros" />
 
     <Button
         android:id="@+id/btn_add_Segundos"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#FF9800"
         android:text="añadir segundos"
-        android:textSize="20dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_show_Segundos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_Primeros" />
 
     <Button
         android:id="@+id/btn_show_Segundos"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#FF9800"
-
         android:text="segundos pedidos"
-        android:textSize="20dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_add_Postre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_Segundos" />
 
     <Button
         android:id="@+id/btn_add_Postre"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#E91E63"
         android:text="añadir postre"
-        android:textSize="20dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_show_Postre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_Segundos" />
 
     <Button
         android:id="@+id/btn_show_Postre"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#E91E63"
-
         android:text="postres pedidos"
-        android:textSize="20dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_Postre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

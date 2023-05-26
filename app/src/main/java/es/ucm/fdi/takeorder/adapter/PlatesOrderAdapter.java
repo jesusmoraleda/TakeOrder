@@ -101,9 +101,8 @@ public class PlatesOrderAdapter extends FirestoreRecyclerAdapter<PlatesOrderElem
                                     @Override
                                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                                         if (documentSnapshot.exists()) {
-
-                                            long quantityTotal = documentSnapshot.getLong("quantity");
-                                            double quantityNeeded = Integer.parseInt(amount) * ingredient.getQuantity();
+                                            double quantityTotal = documentSnapshot.getDouble("quantity");
+                                            double quantityNeeded = Double.parseDouble(amount) * ingredient.getQuantity();
                                             if (quantityTotal < quantityNeeded) {
                                                 allIngredientsAvailable.set(false);
                                                 Toast.makeText(activity, "Error al añadir plato, el ingrediente " + ingredient.getName() + " no esta disponible para " + amount + " cantidades", Toast.LENGTH_SHORT).show();
@@ -134,21 +133,45 @@ public class PlatesOrderAdapter extends FirestoreRecyclerAdapter<PlatesOrderElem
 
                                                         String id_ingredient = ingredient2.getId();
                                                         DocumentReference ingredientsRef = dbFirestore.collection("ingredients").document(id_ingredient);
-                                                        ingredientsRef.update("quantity", FieldValue.increment(-(Integer.parseInt(amount) * ingredient2.getQuantity())))
-                                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                    @Override
-                                                                    public void onSuccess(Void aVoid) {
-                                                                        // La cantidad se ha actualizado correctamente
-                                                                        Toast.makeText(activity, "Actulizados los ingredientes totales", Toast.LENGTH_SHORT).show();
-                                                                    }
-                                                                })
-                                                                .addOnFailureListener(new OnFailureListener() {
-                                                                    @Override
-                                                                    public void onFailure(@NonNull Exception e) {
-                                                                        // Ha ocurrido un error al actualizar la cantidad
-                                                                        Toast.makeText(activity, "Error al actulizar los ingredientes totales", Toast.LENGTH_SHORT).show();
-                                                                    }
-                                                                });
+
+                                                        ingredientsRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+
+                                                            @Override
+                                                            public void onSuccess(DocumentSnapshot documentSnapshot2) {
+
+                                                                double auxAmount = Double.parseDouble(amount);
+                                                                double auxQuantity = ingredient2.getQuantity();
+                                                                double suma = (auxAmount * auxQuantity);
+                                                                double auxQuantityTotal = documentSnapshot2.getDouble("quantity");
+                                                                double result = auxQuantityTotal - suma;
+                                                                result = formatearDecimales(result,2);
+                                                                //mirar con set en lugar de update
+
+
+                                                                Map<String, Object> mapAux = new HashMap<>();
+                                                                mapAux = documentSnapshot2.getData();
+                                                                mapAux.remove("quantity");
+                                                                mapAux.put("quantity",result);
+
+
+
+                                                                ingredientsRef.set(mapAux)
+                                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                            @Override
+                                                                            public void onSuccess(Void aVoid) {
+                                                                                // La cantidad se ha actualizado correctamente
+                                                                                Toast.makeText(activity, "Actulizados los ingredientes totales", Toast.LENGTH_SHORT).show();
+                                                                            }
+                                                                        })
+                                                                        .addOnFailureListener(new OnFailureListener() {
+                                                                            @Override
+                                                                            public void onFailure(@NonNull Exception e) {
+                                                                                // Ha ocurrido un error al actualizar la cantidad
+                                                                                Toast.makeText(activity, "Error al actulizar los ingredientes totales", Toast.LENGTH_SHORT).show();
+                                                                            }
+                                                                        });
+                                                            }
+                                                        });
 
                                                     }
 
@@ -176,6 +199,10 @@ public class PlatesOrderAdapter extends FirestoreRecyclerAdapter<PlatesOrderElem
                 mDialog.show();
             }
         });
+    }
+
+    public static Double formatearDecimales(Double numero, Integer numeroDecimales) {
+        return Math.round(numero * Math.pow(10, numeroDecimales)) / Math.pow(10, numeroDecimales);
     }
 
 

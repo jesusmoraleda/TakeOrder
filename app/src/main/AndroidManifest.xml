@@ -11,13 +11,17 @@
         android:theme="@style/Theme.TakeOrder">
         <activity
             android:name=".ListPostres"
+            android:screenOrientation="portrait"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
         </activity>
         <activity
             android:name=".ListSegundos"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -25,6 +29,7 @@
         </activity>
         <activity
             android:name=".ListPrimeros"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -32,6 +37,7 @@
         </activity>
         <activity
             android:name=".AddPostres"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -39,6 +45,7 @@
         </activity>
         <activity
             android:name=".AddSegundos"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -46,6 +53,7 @@
         </activity>
         <activity
             android:name=".AddPrimeros"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -53,6 +61,7 @@
         </activity>
         <activity
             android:name=".AddMenu"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -60,6 +69,7 @@
         </activity>
         <activity
             android:name=".SelectOption"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -67,6 +77,7 @@
         </activity>
         <activity
             android:name=".ListPlatesOrder"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -74,6 +85,7 @@
         </activity>
         <activity
             android:name=".ListDrinksOrder"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -81,6 +93,7 @@
         </activity>
         <activity
             android:name=".AddDrinksOrder"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -88,6 +101,7 @@
         </activity>
         <activity
             android:name=".AddPlatesOrder"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -95,19 +109,19 @@
         </activity>
         <activity
             android:name=".AddOrder"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Platos"
-            android:exported="false" />
-        <activity
             android:name=".AddMesas"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".Mesas"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
