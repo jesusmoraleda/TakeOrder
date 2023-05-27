@@ -121,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="15dp"
                 android:text="editar" />
 
             <Button
@@ -129,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="15dp"
                 android:text="comanda" />
 
         </LinearLayout>
